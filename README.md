@@ -27,6 +27,7 @@ Upload a `.eml` file and get an intelligent classification with risk analysis.
 
 ## 📂 Project Structure
 
+```
 Phish-Classifier-using-ai/
 │
 ├── app/
@@ -37,7 +38,7 @@ Phish-Classifier-using-ai/
 ├── requirements.txt
 ├── .env.example
 └── README.md
-
+```
 ---
 
 ## ⚙️ Installation
@@ -68,7 +69,6 @@ pip install -r requirements.txt
 ## 🔐 Environment Setup
 
 Copy the example environment file:
-touch .env
 
 cp .env.example .env
 
