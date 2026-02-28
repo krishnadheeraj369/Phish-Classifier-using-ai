@@ -1,63 +1,112 @@
-🛡️ Phish-Classifier-using-ai
-An intelligent email security tool built with Python 3.12, Streamlit, and Google Gemini 1.5 Flash. This application allows users to upload raw .eml files to determine if an email is a legitimate "Original" message or a malicious "Phishing" attempt.
+# Phish Classifier using AI
 
-🚀 Features
-Deep .eml Parsing: Automatically extracts headers (Sender, Subject, Date) and the body content from standard email files.
+An AI-powered email phishing detection tool built with Python and Streamlit.  
+Upload a `.eml` file and get an intelligent classification with risk analysis.
 
-AI-Powered Analysis: Leverages Gemini 1.5 Flash to identify social engineering tactics, urgent language, and sender spoofing.
+---
 
-Risk Scoring: Provides a 1-10 risk rating and specific security indicators (Red Flags).
+## 🚀 Features
 
-Modern UI: A clean, responsive dashboard built with Streamlit for a fast user experience.
+- Upload `.eml` email files
+- Extract email headers and body
+- AI-based phishing detection using Google Gemini
+- Risk score and detailed explanation output
+- Clean Streamlit user interface
 
-🛠️ Setup & Installation
-1. Prerequisites
-OS: Ubuntu (or any Linux/macOS/Windows environment)
+---
 
-Language: Python 3.12.3
+## 🧠 Tech Stack
 
-API Key: A Google Gemini API Key (Get one at aistudio.google.com)
+- Python 3.12
+- Streamlit
+- Google Gemini 1.5 Flash API
+- Python email parsing library
+- python-dotenv for environment management
 
-2. Installation
-Clone the repository and set up your virtual environment:
+---
 
-git clone https://github.com/krishnadheeraj369/Phish-Classifier-using-ai.git
+## 📂 Project Structure
+
+Phish-Classifier-using-ai/
+│
+├── app/
+│   ├── parser.py
+│   ├── classifier.py
+│
+├── app_ui.py
+├── requirements.txt
+├── .env.example
+└── README.md
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+git clone https://github.com/krishnadheeraj369/Phish-Classifier-using-ai.git  
 cd Phish-Classifier-using-ai
-python3 -m venv venv
+
+Create a virtual environment:
+
+python -m venv venv
+
+Activate the environment:
+
+On Linux / macOS:
 source venv/bin/activate
+
+On Windows:
+venv\Scripts\activate
+
+Install dependencies:
+
 pip install -r requirements.txt
 
-3. Environment Configuration
-Copy the example environment file and add your API key:
+---
+
+## 🔐 Environment Setup
+
+Copy the example environment file:
+touch .env
 
 cp .env.example .env
 
-Now, open the .env file in your editor and paste your API key:
-GOOGLE_API_KEY=your_gemini_api_key_here
+Now open `.env` and replace the placeholder value with your actual Google Gemini API key:
 
-4. Run the Application
+GEMINI_API_KEY=your_api_key_here
+
+---
+
+## ▶️ Run the Application
+
 streamlit run app_ui.py
 
-📂 Project Structure
-Phish-Classifier-using-ai/
-├── app/
-│   ├── parser.py          # .eml extraction logic
-│   └── classifier.py      # Gemini AI integration
-├── app_ui.py              # Main application / Streamlit frontend
-├── .env                   # Local environment variables (Private)
-├── .env.example           # Template for environment variables
-├── .gitignore             # Prevents venv/ and .env from being pushed
-├── requirements.txt       # Project dependencies
-└── README.md              # Project documentation
+After running the command, open the browser link shown in the terminal.
 
-🛡️ How it Works
-Upload: Drop a .eml file (exported from Gmail, Outlook, etc.) into the dashboard.
+---
 
-Parse: The system uses Python's email library to extract the sender's identity and the message body.
+## 📊 How It Works
 
-Analyze: The content is sent to the Gemini 1.5 Flash model with a specialized security prompt.
+1. Upload an email file (.eml)
+2. Email headers and body are extracted
+3. The content is sent to the Gemini AI model
+4. The AI returns:
+   - Classification (Safe / Phishing)
+   - Risk score
+   - Explanation of reasoning
 
-Verdict: You receive a classification (Safe/Phishing), a risk score, and a list of detected red flags.
+---
 
-📄 License
-Distributed under the MIT License.
+## 🛡️ Use Cases
+
+- Security awareness testing
+- Educational cybersecurity projects
+- AI experimentation
+- Portfolio demonstration
+
+---
+
+## ⚠️ Disclaimer
+
+This tool is built for educational and research purposes only.
